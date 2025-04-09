@@ -1,8 +1,8 @@
 resource "helm_release" "temporal" {
+  depends_on = [kubernetes_deployment.postgres]
   name             = "temporal"
   chart            = "temporal"
-  repository       = "https://charts.temporal.io"
-  version          = "0.41.2"
+  repository       = "https://temporalio.github.io/helm-charts"
   namespace        = var.namespace
   create_namespace = true
 

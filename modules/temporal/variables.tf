@@ -34,9 +34,20 @@ variable "postgres_user" {
   default = "admin"
 }
 
+variable "postgres_name" {
+  type    = string
+  default = "admin"
+}
+
 variable "postgres_secret" {
   type    = string
   default = "postgres"
+}
+
+variable "postgres_password" {
+  type    = string
+  default = "postgres"
+  sensitive = true
 }
 
 variable "temporal_db_name" {
@@ -100,3 +111,11 @@ variable "namespace" {
   type     = string
   default  = "temporal"
 }
+
+
+variable "dev_mode" {
+  type     = bool
+  default  = false
+}
+
+

@@ -29,7 +29,7 @@ module "temporal" {
   prometheus_enabled        = true
   grafana_enabled           = true
 
-  enable_hpa                = false
+  enable_hpa                = true
   hpa_target_deployment     = "temporal-frontend"
   hpa_min_replicas          = 2
   hpa_max_replicas          = 5

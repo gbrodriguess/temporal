@@ -36,11 +36,11 @@ locals {
 
     "server.config.persistence.visibility.driver"            = "sql"
     "server.config.persistence.visibility.sql.driver"        = "postgres12"
-    "server.config.persistence.visibility.sql.host"          = var.postgres_host
+    "server.config.persistence.visibility.sql.host"          = var.dev_mode ? "${var.postgres_name}.${var.namespace}" : var.postgres_host
     "server.config.persistence.visibility.sql.port"          = "5432"
     "server.config.persistence.visibility.sql.database"      = var.visibility_db_name
-    "server.config.persistence.visibility.sql.user"          = var.postgres_user
-    "server.config.persistence.visibility.sql.existingSecret" = var.postgres_secret
+    "server.config.persistence.visibility.sql.user"          = var.dev_mode? "admin": var.postgres_user
+    "server.config.persistence.visibility.sql.existingSecret" =var.dev_mode? "${var.postgres_name}": var.postgres_secret
     "server.config.persistence.visibility.sql.maxConns"      = "20"
     "server.config.persistence.visibility.sql.maxConnLifetime" = "1h"
 
