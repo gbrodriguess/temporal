@@ -33,7 +33,8 @@ locals {
     "server.config.persistence.default.sql.existingSecret"   = var.postgres_secret
     "server.config.persistence.default.sql.maxConns"         = "20"
     "server.config.persistence.default.sql.maxConnLifetime"  = "1h"
-
+    "server.image.tag"                                       = var.server_version
+    "server.image.repository"                                = var.image_repository
     "server.config.persistence.visibility.driver"            = "sql"
     "server.config.persistence.visibility.sql.driver"        = "postgres12"
     "server.config.persistence.visibility.sql.host"          = var.dev_mode ? "${var.postgres_name}.${var.namespace}" : var.postgres_host

@@ -118,4 +118,15 @@ variable "dev_mode" {
   default  = false
 }
 
+variable "server_version" {
+  type     = string
+  default  = "1.27.2"
+}
+
+
+variable "image_repository" {
+  type     = string
+  default  = "temporalio/server"
+}
+
 
